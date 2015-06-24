@@ -1,0 +1,9 @@
+{
+  "name": "imagesProcess",
+  "version": "0.0.1",
+  "dependencies": {
+    "file-type": "^2.7.0",
+    "gm": "^1.18.1",
+    "request": "^2.58.0"
+  }
+}
