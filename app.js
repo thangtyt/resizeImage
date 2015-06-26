@@ -4,7 +4,7 @@
 'use strict';
 const fs        = require('fs'),
     request     = require('request'),
-    imageResize = require('gm'),
+    gm = require('gm'),
     //readChunk   = require('read-chunk'),
     fileType    = require('file-type');
 let flag=false;
@@ -49,9 +49,9 @@ function downloadImage(url,name){
             console.timeEnd('download');
             console.log('Done !!');
             //resize anh
-            imageResize('./images_origin/'+name+'.'+ext)
-            .resize(640,480)
-            .write('./images_resize/'+name+'.'+ext, function (err) {
+            gm('./images_origin/'+name+'.'+ext)
+            .resize(640,480).threshold(100)
+            .write('./images_convert/'+name+'.'+ext, function (err) {
                 if (!err) console.log('Done to resize file\n *************');
             });
         })
